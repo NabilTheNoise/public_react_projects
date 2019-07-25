@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class Square extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      value = null,
+    };
+  }
+  
   render(){
     return(
       <button className="square" onClick={()=> alert('Click!')}>
