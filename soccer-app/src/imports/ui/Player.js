@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import { Card, CardHeader, CardMedia, CardContent, CardActions, CardActionArea } from '@material-ui/core';
-import { Button } from '@material-ui/core';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Card, CardMedia, CardContent, CardActions, CardActionArea } from '@material-ui/core';
+import { Button, Typography, Avatar, Chip } from '@material-ui/core';
+
+import { blue } from '@material-ui/core/colors';
+
+const classes = {
+  chip: {
+    margin: 4,
+  },
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  button: {
+    margin:  12,
+  },
+};
+
 
 
 export default class Player extends Component {
@@ -27,21 +33,23 @@ export default class Player extends Component {
            title="Nabil"
          />
          <CardContent>
-           <Typography gutterBottom variant="h5" component="h2">
-             Nabil
-           </Typography>
-           <Typography variant="body2" color="textSecondary" component="p">
-             I'm just a simple player. not a big deal!
-           </Typography>
+
          </CardContent>
        </CardActionArea>
        <CardActions>
-         <Button size="small" color="primary">
-           Share
-         </Button>
-         <Button size="small" color="primary">
-           Learn More
-         </Button>
+         <Chip
+          avatar={<Avatar>2</Avatar>}
+          label="Passing"
+          className={classes.chip}
+          color="primary"
+          clickable
+        />
+        <Button size="small" color="primary">
+         Share
+        </Button>
+        <Button size="small" color="primary">
+         Learn More
+        </Button>
        </CardActions>
      </Card>
     );
